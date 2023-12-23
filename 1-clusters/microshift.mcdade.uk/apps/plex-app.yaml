@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: metallb
+  name: plex
   namespace: argocd
 spec:
   destination:
-    namespace: metallb-system
+    namespace: media
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: 2-services/metallb
-    repoURL: https://github.com/benswinney/microshift-homelab.git
+    path: 3-apps/plex
+    repoURL: https://github.com/redlegoman/microshift-homelab.git
     targetRevision: master
   syncPolicy:
     automated:
